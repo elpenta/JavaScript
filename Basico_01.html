@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos JavaScript</title>
+</head>
+
+<body>
+  <h1>Fundamentos JavaScript-Hola--</h1>
+  <script>
+    var hola = 'hola mundo';
+    console.log(hola);
+    /* Let variables locales {} 
+       var variables globales, no se recomiendan*/
+    const PI = 3.1416;
+    console.log(PI);
+    /*las constantes tienen q estar definidas
+    Tampoco pueden ser modificadas luego durante el flujo*/
+    //Ahora si es objeto, array, pueden ser constante
+    let objeto = {
+      nombre: "Pablo",
+      edad: 38
+    }
+
+    let colores = ["blanco", "negro", "azul"];
+
+    console.log(objeto);
+    console.log(colores);
+
+    objeto.correo = "pablo@gmail.com";
+    objeto.ojos = "Marrones"
+
+    colores.push("anaranjado");
+    colores.push("verde");
+
+    console.log(objeto);
+    console.log(colores);
+
+
+    //Clase 5 de Js
+
+    let nombre = "Pablo"
+    let apellido = 'Rodriguez'
+    let saludo = new String("Hola Mundo");
+    let lorem = "Lorem ipsum, dlor sit amet cosectetur ....";
+
+    console.log(nombre, apellido, saludo);
+
+    console.log(
+      nombre.length,
+      apellido.length,
+      saludo.length
+    );
+
+    console.log(
+      nombre.toLowerCase(),
+      apellido.toUpperCase(),
+      saludo.includes("amet"),
+      lorem.includes("amet"),
+      lorem.split(" "),//separa las palabras en objetos, como si fueran objetos de un array. encuentra un espacio y lo tomo como un objeto
+      lorem.split(",") //Separa objetos cuando encuentra una ",". en este caso dos objetos.
+    );
+
+    //Clase 6
+    //Concatenacion.
+    let saludos2 = "Hola mi nombre es " + nombre + " " + apellido + ".";
+    console.log(saludos2);
+
+    //con interposicion de variables
+    //Templates String
+    let saludo3 = `Hola mi nombre es ${nombre} ${apellido}.`
+    console.log(saludo3);
+    console.log(saludo3);
+    ss
+
+
+  </script>
+</body>
+
+</html>
