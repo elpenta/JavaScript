@@ -161,9 +161,64 @@
     funcionExpresada();
 
 
+    //Definicion de Array
+    const v_array = [1, true, "Hola", ["A", "B", "C", [1, 2, 3]]];
 
+    console.log(v_array[0]);
+    console.log(v_array[3][2]);
+    console.log(v_array[3][3][1]);
+    console.log("TAmaño Array " + v_array.length)
+    //Otra forma
+    const h = Array.of("X", "Y", "Z", 9, 8, 7);
+    console.log(h[2])
 
+    v_array.push("Last_elemento"); //Agrega un elemento al array
+    console.log(v_array);
 
+    v_array.pop(); //Quita el ultimo elemento del array
+    console.log(v_array);
+
+    const colores2 = ["Rojo", "Verde", "Amarillo"];
+
+    colores2.forEach(function (el, index) //le envio "el" como elemento, podria ser otro caracter o palabra, index es default, indica posicion del array
+    {
+      console.log(`<li id="${index}">${el}</li>`)
+    })
+
+    //Definicion de objeto
+    //Dentro de un objeto a las variables se le van a llmar atributos/propiedades y a las funciones se las llama metodos.
+
+    const pablo = {
+      nombre: "Pablo",
+      apellido: "Rodriguez",
+      edad: 38,
+      pasatiempos: ["correr", "Gym"],
+      soltero: false,
+      contacto: {
+        email: "rodriguez@gmail.com",
+        twitter: "@el_penta",
+        movil: 1112345678
+      },
+      saludar: function () {
+        console.log(`Holaaaa!!!`)
+      }, //agrego this
+      //this permite usar atributos del objeto, dentro del contexto donde lo invoco,
+      decirMiNombre: function () {
+        console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años`)
+      }
+    }
+
+    console.log(pablo);
+    console.log(pablo.nombre);
+    pablo.saludar();//Por que ya tiene adentro el console.log
+    console.log(pablo.pasatiempos[1]);
+    console.log(pablo.contacto.email)
+
+    pablo.decirMiNombre();
+
+    console.log(Object.keys(pablo)) //muestras todas los nombres de los atributos
+    console.log(Object.values(pablo))//Me dice todos loas valores de los atributos del objeto
+    console.log(pablo.hasOwnProperty("nombre"))//Valida si el atirbuto "nombre" existe dentro del objeto
 
 
 
