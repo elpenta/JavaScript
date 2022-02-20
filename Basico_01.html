@@ -73,7 +73,98 @@
     let saludo3 = `Hola mi nombre es ${nombre} ${apellido}.`
     console.log(saludo3);
     console.log(saludo3);
-    ss
+
+    let a = 2;
+    let b = new Number(1);
+    let c = 7.19;
+    let d = "5.6"
+    console.log(a, b);
+    console.log(c.toFixed(1)); //Presicion, redondea
+    console.log(c.toFixed(5)); //Presicion, redondea
+
+    console.log(parseInt(c)); //Te quedas con la parte Entera
+    console.log(parseFloat(c));//Te quedas con la parte flotante.
+    console.log(typeof c, typeof d); //Tipo de dato de las variables
+
+    console.log(c + parseFloat(d)); //Casting de D, a float
+    console.log(c + parseInt(d)); //Casting de D a entero.
+
+    console.log(c + Number.parseInt(d)); //Casting de D a entero.  usando el constructor number. Es lo mismo q ir por la variable
+
+    //NaN - Not a Number
+    let noEsUnNumero = "Hola" * 3.7;
+    console.log(noEsUnNumero);
+
+    function estoEsUnaFuncion() {
+      console.log("Uno");
+      console.log("Dos");
+      console.log("Tres");
+    }
+
+    estoEsUnaFuncion();
+
+    function funcionQueRecibeValor() {
+      console.log("Uno");
+      console.log("Dos");
+      console.log("Tres");
+      return "La fucnion ha retornado una cadena de texto";
+    }
+    //Funcion retorna valor
+
+    let valorDeFucnion = funcionQueRecibeValor();
+    console.log(valorDeFucnion);
+
+    function funcionQueRecibeValor2() {
+      console.log("Uno");
+      console.log("Dos");
+      return 20; //Retorna 20 y no llega el otro return. 
+      console.log("Tres");
+      return "La fucnion ha retornado una cadena de texto";
+    }
+
+    let valorDeFucnion2 = funcionQueRecibeValor2();
+    console.log(valorDeFucnion2);
+
+    //Funcion recibe parametros
+    function saludar(nombre, edad) {
+
+      console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años`)
+
+    }
+
+    saludar("Pedro", 44);
+    saludar();
+
+    function saludar(nombre = "desconocido", edad = 0)  //Le pongo valores default a las variables por si se pasan vacios.
+    {
+
+      console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años`)
+
+    }
+    saludar();
+
+    //Fucniones declaradas, no es neceario definirla antes de su invocacion. 
+    funcionDeclarada();
+    function funcionDeclarada() {
+      console.log("Funcion declarada");
+    }
+    funcionDeclarada();
+
+    //Funcion anonima, se asigna a una constante, Tiene q se declarada antes de ser asigna a la variable
+
+    //funcionExpresada(); Aca no puede ser invocada, ya  que no fue declarada , en la linea siguiente se declara.
+
+    const funcionExpresada = function () {
+      console.log("Funcion Expresada");
+    }
+
+    funcionExpresada();
+
+
+
+
+
+
 
 
   </script>
