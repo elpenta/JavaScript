@@ -220,6 +220,102 @@
     console.log(Object.values(pablo))//Me dice todos loas valores de los atributos del objeto
     console.log(pablo.hasOwnProperty("nombre"))//Valida si el atirbuto "nombre" existe dentro del objeto
 
+    console.log(8 > 9);
+    console.log(8 >= 9);
+    console.log(8 <= 9);
+    console.log(8 < 8);
+    console.log(8 == 8);
+    //= Asignacion,del valor izq al derecho
+    //== Comparacion de valores
+    //=== Valida tipo de datos y de valor
+
+    console.log("7" == 7); //Por trurty dice q es verdades
+    console.log("7" === 7);
+    console.log(7 === 7);;
+
+
+    //Incremento o decremento
+    let i = 0
+    i += 1; //o i++
+    i -= 1 //i--
+    i++;
+    i--;
+
+    let p = 0;
+    console.log(++p); //Incrementa y luego lo muestra
+    console.log(p++) //Muestra y luego lo muestra
+    console.log(p) //Muestra 2 q fue lo ultimo q incremento
+
+    console.log((9 === 9) || (8 === 9)) //true una
+    console.log((9 === 9) && (8 === 9)) //true and true ambos
+
+    let edad = 17;
+    if (edad > 17) {
+      console.log(`Eres mayor de edad`);
+    } else {
+      console.log(` Eres menor de edad`);
+    }
+
+    //Operador ternario (condicion) ? True:False
+    console.log(`Operador ternario`);
+    let eresMayor = (edad >= 18) ? "eres mayor de edad" : "Eres menor de edad";
+    console.log(eresMayor);
+
+    let dia = 2
+
+    //SwitchCase
+    switch (dia) {
+      case 0:
+        console.log("Domingo");
+        break;
+      case 1:
+        console.log("Lunes");
+        break;
+      case 2:
+        console.log("Martes");
+        break;
+      default:
+        Console.log("Other Dia");
+        break;
+    }
+
+    for (let index = 0; index < 10; index++) {
+      const element = index;
+      console.log(element);
+    }
+
+    let array = [1, 2, 3, 4, 500, 600]
+    for (let index = 0; index < array.length; index++) {
+      //const element = array[index];
+      console.log(`For: ${array[index]}`);
+    }
+
+
+
+    const pedro = {
+      nombre: "Pedro",
+      apellido: "Arturo",
+      Edad: 92
+    }
+    //Key es el atributo, key puede ser cualquier letra o palabra.
+    //Se llama forin, para recorrer objetos,clases
+    for (const key in pedro) {
+      if (Object.hasOwnProperty.call(pedro, key)) {
+        console.log(pedro[key]);
+      }
+      console.log(`Key: ${key}, Value ${pedro[key]}`) //Es lo mismo que lo anterior.
+    }
+
+    //forof es para recorrer cualquier objeto, o array, string
+    let cadena = "Hola como anda tu hermana"
+    for (const iterator of cadena) {
+      console.log(iterator)
+    }
+
+
+
+
+
 
 
   </script>
