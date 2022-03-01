@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos JavaScript</title>
+</head>
+
+<body>
+  <h1>Fundamentos JavaScript-Hola--</h1>
+  <script>
+    console.log("hola");
+    console.log(Date());
+    let fecha = new Date();
+    console.log(fecha);
+    console.log(fecha.getDate());
+
+    console.log(fecha.toString());
+
+    console.log(fecha.toDateString());
+
+    console.log(fecha.toLocaleDateString());
+
+    console.log(fecha.toLocaleTimeString());
+
+    //Hora cero del meridiano de greenwitch
+    console.log(fecha.getTimezoneOffset());
+    console.log(fecha.getUTCDate());
+
+    //www.momentjs.com para el manejo de usos horarios
+
+    let cumplePablo = new Date(1983, 03, 10); //Los meses comienzan desde el mes 0 (Ene),1 (Feb), ....11 (dic)
+    console.log(cumplePablo);
+
+    //**************************************************************
+
+    /////PARA CALCULOS MATEMATICOS SE USA Math
+
+    console.log(Math);
+    console.log(Math.PI);
+    console.log(Math.abs(-7.8));
+    console.log(Math.ceil(7.2));
+    console.log(Math.round(7.49));
+    console.log(Math.pow(2, 5));//Potencia, elevar un numero
+
+    console.log(Math.sign(-1));//sign devuelve el signo del valor, si es < 0 devuelve -1, si es 0 entonces devuelve 0. si es > 0 devuelve 1.
+
+    console.log(Math.random())
+    console.log(Math.random() * 1000);//valores entre 0 y 1000
+    //**************************************************************
+    //Operador cortocircuito
+    //Cortocircuito OR -  Cuando el valor de la izquierda en la expresion siempre puede validar a true, es el valor que se cargara por defecto.
+    //Cortocircuito AND - Cuando el valor de la izquierda en la expresion siempre puede validar a false, es el valor que se cargara por defecto.
+
+    function saludar(par_nombre) {
+      nombre = par_nombre || "desconocido"; //es true el de la izq, si es vacio, carga desconocido
+      console.log(`Hola ${nombre}`);
+    }
+
+    saludar("Pablo");
+    saludar();
+
+    console.log("cadena" || "valor de la derecha");
+    console.log(null || "valor de la derecha");
+
+    /*Ahora con && te muestra todo lo q tiende a false.*/
+
+    console.log("cadena" && "valor de la derecha");
+    console.log(null && "valor de la derecha");
+
+    //**************************************************************
+    //Para interactuar con el usuario
+
+    console.log(window);
+    //window.alert("hola esto es una alerta");
+    //ó
+    /*alert("hola esto es una alerta 2");
+    confirm("hola esto es una confirmacion");
+    prompt("hola esto es un prompt y le permite al usuario ingresar un valor");*/
+
+    let v_alert = alert("hola esto es una alerta ")
+    v_confirm = confirm("hola esto es una confirmacion"),
+      v_prompt = prompt("hola esto es un prompt y le permite al usuario ingresar un valor");
+
+    console.log(v_alert);
+    console.log(v_confirm);
+    console.log(v_prompt);
+
+
+  </script>
+</body>
+
+</html>

@@ -13,6 +13,101 @@
 
     console.log("hola");
 
+    try {
+      console.log("En el try se agrega el codigo a evaluar");
+      noExiste;
+      console.log("Segundo mensaje en el try");//El try detecto el error y no mostro este mensaje, directamente salto al catch
+    } catch (error) {
+      console.log("Catch, captura cualquier error surgido o lanzado en el try");
+      console.log(error);
+    } finally {
+      console.log("El bloque finally se ejecutara siempre al final de un bloque try-catch");
+    }
+
+    //Mas simple
+    try {
+      let numero = "r";
+      if (isNaN(numero)) {
+        throw new Error("El caracter no es un numero");
+      }
+      console.log(numero * numero);
+    } catch (error) {
+      console.log(`Ingrese numero: ${error}`)
+    }
+
+    //Sin destructuracion
+    const numeros = [1, 2, 3];
+    //Sin destructuracion
+    let uno = numeros[0],
+      dos = numeros[1],
+      tres = numeros[2];
+    console.log(uno, dos, tres);
+
+    //Con destructuracion
+    const [one, two, three] = numeros; //asigna el valor del arreglo a las variables, directamente
+    console.log(one, two, three);
+
+    //Lo mismo se puede hacer con objetos
+    let pablo = {
+      nombre: "Pablo",
+      apellido: "Rodriguez",
+      edad: 39
+    }
+    //Las variables tienen que tener el mismo nombre del atributo
+    let { nombre, edad, apellido } = pablo; //No importa el orden de los atributos, Sí que tengan el mismo nombre
+    console.log(nombre, apellido, edad);
+
+
+    ////PARAMETROS REST
+
+    function sumar(a, b, ...c) {//significa q recibe dos parametros y el resto no lo sabe. es como que se guarda en un "arrray". sON 3 PUNTOS SUSPENCIVOS
+      let resultado = a + b;
+      c.forEach(function (n) {
+        resultado += n;
+      })
+      return resultado;
+    }
+    console.log(sumar(1, 2));
+    console.log(sumar(1, 2, 3));
+    console.log(sumar(1, 2, 3, 4));
+    console.log(sumar(1, 2, 3, 4, 5));
+
+    //Operador de propagacion. se utiliza para pasar datos sin especificar un tamño finito. se agregan los tres puntos y pueden variar su cantidad.
+    const arra1 = [1, 2, 3, 4, 5], arra2 = [6, 7, 8, 9, 0];
+    console.log(arra1, arra2);
+
+    const arra3 = [...arra1, ...arra2];//Sin los tres puntos el nuevo arra3 tendria dos obj arra de 5 elementos cada uno, agregando los tres puntos, el arra3 se crea como un array de 10 elementos.
+    console.log(arra3);
+
+    //arrow function
+    //Antes
+    saludar = function () {
+      console.log("Hola");
+    }
+    saludar();
+    //arrow function
+    saludar2 = () => {
+      console.log("Hola 2");
+    }
+    saludar2();
+    //Cuando la funcio tiene una sola sentencia, tmb se puede hacer
+    saludar3 = () => console.log("Hola 3");
+    saludar3();
+
+    //Arrow function recibiendo parametros
+    saludar4 = (nombre) => console.log(`Hola 3 ${nombre}`);
+    saludar4("irma");
+    //otra opcion es sin parentesis
+    saludar5 = nombre => console.log(`Hola 3 ${nombre}`);
+    saludar5("irma");
+
+    //arrow function tiene "RETURN" implicito!!
+
+    //ejemplo con foreach
+    const arranumber = [1, 2, 4, 5, 6];
+    arranumber.forEach((elem, index) => console.log(`${elem} esta en la posicion ${index}`))
+
+
 
   </script>
 </body>

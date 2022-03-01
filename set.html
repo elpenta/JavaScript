@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set JavaScript</title>
+</head>
+
+<body>
+  <h1>Set JavaScript-Hola--</h1>
+  <script>
+    console.log("Sets");
+    //Set es un tipo de datos, almacena objetos, etc, pero no es un array.
+
+    const set = new Set([1, 2, 3, 3, 4, 5, true, false, false, {}, {}, "hola", "HOLA"]);
+    console.log(set);
+    console.log(set.size);
+
+    const set2 = new Set();
+    set2.add(1);
+    set2.add(2);
+    set2.add(2);
+    set2.add(true);
+    set2.add(3);
+    set2.add(true);
+    set2.add(false);
+
+    console.log("Recorriendo set");
+    for (item of set) {
+      console.log(item);
+    }
+
+    console.log("Recorriendo set2");
+    set2.forEach(item => console.log((item)));
+
+    console.log(set[0]);
+
+    let arr = Array.from(set);
+    console.log(arr);
+    console.log(arr[1]);
+
+    set.delete("HOLA"); //borra HOLA del tipo de datos set.
+    console.log(set);
+
+    console.log(set.has("hola")); //has busca coincidencia dentro de set , si existe, es verdadero.
+    console.log(set.has(19));
+
+    set2.clear();//borra todos los datos de set2
+    console.log(set2);
+
+
+  </script>
+</body>
+
+</html>

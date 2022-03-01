@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos JavaScript</title>
+</head>
+
+<body>
+  <h1>Fundamentos JavaScript-Hola2--</h1>
+  <script>
+    console.log("hola");
+    class Animal {
+      //El constructor es un metodo especial que se ejecuta en el momento de instanciar la clase.
+      constructor(nombre, genero) {
+        this.nombre = nombre;
+        this.genero = genero;
+      }
+      //Metodos
+      sonar() { console.log("Hago ruidos"); }
+      saludar() { console.log(`Hola me llamo ${this.nombre}`); }
+    }
+
+    class Perro extends Animal {
+      constructor(nombre, genero, tamanio) {
+        //Con el metodo super() se manda a llamar el constructo de la clase padre
+        super(nombre, genero);
+        this.tamanio = tamanio;
+      }
+      sonar() {
+        console.log("Soy un perro y mi sonido es un ladrido");
+      }
+      ladrar() { console.log("Guauuu Guauu"); }
+    }
+    const mimi = new Animal("Mimi", "Hembra"),
+      scooby = new Perro("Scooby", "Macho", "Gigante");
+    console.log(mimi);
+    console.log(scooby);
+    mimi.saludar();
+    scooby.saludar();
+    mimi.sonar();
+    scooby.sonar();
+
+    //set y get
+    class Perro2 extends Animal {
+      constructor(nombre, genero, tamanio) {
+        //Con el metodo super() se manda a llamar el constructo de la clase padre
+        super(nombre, genero);
+        this.tamanio = tamanio;
+        this.raza = null;
+      }
+      sonar() {
+        console.log("Soy un perro y mi sonido es un ladrido");
+      }
+      ladrar() { console.log("Guauuu Guauu"); }
+
+      get getRaza() { return this.raza; }
+
+      set setRaza(raza) { this.raza = raza; }
+    }
+    scooby2 = new Perro2("Scooby", "Macho", "Gigante");
+
+    console.log(scooby2);
+    scooby2.saludar();
+    console.log(scooby2.getRaza);
+    scooby2.setRaza = 'Gran Danes';
+
+    let nombre = 'Pablo', edad = 35
+    console.log(`Hola mi nombre %s y edad %d`, nombre, edad);
+    console.clear();
+    console.table(Object.entries(console).sort())
+
+
+    //Para medir el tiempo de ejecucion
+    console.time("FlagTiempo");
+    console.timeEnd("FlagTiempo");
+
+    console.count("Codigo count");
+    console.count("Codigo count");
+    console.count("Codigo count");
+
+    //Console loguea siempre y ucando se cumpla la condicion del assert.
+    let x = 3, y = 2, pruebaXY = "se espera q x siempre sea menos a y";
+
+    console.assert(x < y, { x, y, pruebaXY });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos JavaScript</title>
+</head>
+
+<body>
+  <h1>Fundamentos JavaScript-Hola--</h1>
+  <script>
+    console.log("hola");
+
+    //Expresiones regulares, para busquedas, validaciones, etc
+
+    let cadena = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia doloremque deserunt mollit anim id est laborum."
+
+    let expReg = new RegExp("lorem", "ig"); //i ignoara mayuscula o minuscula, y g que no se detenga en la primer coincidencia, sino que siga buscando
+    let expReg2 = /lorem/ig;//i ignoara mayuscula o minuscula, y g que no se detenga en la primer coincidencia, sino que siga buscando
+
+    console.log(expReg.test(cadena));//Busca si encuentra o no la palabra dentro de la cadena
+    console.log(expReg.exec(cadena));//Exec busca en la cadena pasada, la palabra lorem
+
+    //igual a la anterior
+    console.log(expReg2.test(cadena));//Busca si encuentra o no la palabra dentro de la cadena
+    console.log(expReg2.exec(cadena));//Exec busca en la cadena pasada, la palabra lorem
+
+    //Lo que mas se usa es la segunda expresion porque es mas facil
+    let expReg3 = /[0-9]/ig
+    let cadena2 = "hola 1 2 39 , chupala";
+
+    console.log(expReg3.test(cadena2));
+    console.log(expReg3.exec(cadena2));
+
+    let expReg4 = /lorem{1,4}/ig; //Le indico que se tiene q repetir entre 1 y 3
+    let cadena3 = "hola 1 2 39 , lorem lorem lorem chupala";
+
+    console.log(expReg4.test(cadena3));
+    console.log(expReg4.exec(cadena3));
+    console.clear();
+    ////Funcion anonima Autoejecutable
+
+    (function () {
+      console.log("Mi primer IIFE");
+    })();
+
+    (function (d, w, c) {
+      console.log("Mi segunda IIFE");
+      console.log(d);
+      console.log(w);
+      console.log(c);
+    })(document, window, console)
+
+
+  </script>
+</body>
+
+</html>

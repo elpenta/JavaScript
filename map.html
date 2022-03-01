@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map JavaScript</title>
+</head>
+
+<body>
+  <h1>Map JavaScript-Hola--</h1>
+  <script>
+    console.log("Map");
+    //Map almacena clave:valor
+
+    let mapa = new Map();
+    mapa.set("nombre", "jon");
+    mapa.set("apellido", "Mircha");
+    mapa.set("edad", 35);
+
+    console.log(mapa);
+    console.log(mapa.size);
+    console.log(mapa.has("correo")); //busca coincidencia
+    console.log(mapa.has("nombre"));
+    console.log(mapa.get("nombre"));
+    mapa.set("nombre", "jonathan mircha");
+    console.log(mapa.get("nombre"));
+    mapa.delete("apellido");
+
+    mapa.set(19, "Diecinueve");
+
+    for (let [key, value] of mapa) {
+      console.log(`Llave: ${key}. valor: ${value}`);
+    }
+
+    //Otra forma con Map
+
+    const mapa2 = new Map([
+      ["nombre", "Kenai"],
+      ["edad", 7],
+      ["animal", "perro"],
+      [null, "nulo"],
+    ]);
+
+    console.log(mapa2);
+
+    const llavesMapa2 = [...mapa2.keys()]; //con esta funcion me quedo con las llaves
+    const valoresMapa2 = [...mapa2.values()]; //con esta funcion me quedo con las variables
+
+    console.log(llavesMapa2);
+    console.log(valoresMapa2);
+
+    //WeakSet //es similar a Set, pero si sus objetos esta en nulo, se borran sus punterors en memoria.  es para mantener performante tu codigo. No son elementos iterables. no se puede saber su tamaño con size
+
+    //WeakMap //es similar a Map, pero si sus objetos esta en nulo, se borran sus punterors en memoria.  es para mantener performante tu codigo.No son elementos iterables. no se puede saber su tamaño con size
+
+    //Referencia debiles, cuando se van a nulos, se limpia el objeto
+
+
+  </script>
+</body>
+
+</html>

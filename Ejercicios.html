@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios JavaScript</title>
+</head>
+
+<body>
+  <h1>Ejercicios JavaScript-Hola--</h1>
+  <script>
+    console.log("hola");
+
+    //Contar la cantidad de caracteres de una cadena
+    const countCaracteres = (cadena) => (!cadena) ? console.warn("Ingrese una cadena") : console.info(`La cadena "${cadena} tiene ${cadena.length} caracteres`)
+
+    countCaracteres();
+    countCaracteres("Hola mundo");
+
+    // separar la cadena de acuerdo al separador que le paso. se usa SPLIT
+    const cadenaAArray = (cadena = "", separador = undefined) =>
+      (!cadena)
+        ? console.warn("No ingrsaste una cadena de texto")
+        : (separador === undefined)
+          ? console.warn("No ingresaste el caracter separador")
+          : console.info(cadena.split(separador));
+
+    cadenaAArray("Hola al resto del mundo", " ");
+    cadenaAArray("Hola al resto del mundo", ",");
+
+    //Funcion repita 3 veces la cadena que se ingresa
+
+    const repetirTexto = (texto = "", veces = undefined) => {
+      if (!texto) return console.warn("No ingresaste un texto");
+
+      if (veces === undefined) return console.warn("No ingresaste el numero de veces");
+
+      if (veces === 0) return console.error("El numero de veces no puede ser 0");
+
+      if (Math.sign(veces) === -1) return console.warn("El numero de veces no puede ser negativo");
+
+      for (let i = 1; i <= veces; i++) console.info(`${texto},${i}`);
+
+    }
+
+    repetirTexto("hola munndo", 3);
+    repetirTexto("hola munndo", 0);
+    repetirTexto("hola munndo", -3);
+    repetirTexto("", 3);
+    repetirTexto("hola munndo");
+
+    //ingrasar cadena de texto y la devuelva invertida
+    const invertirCadena = (cadena = "") => {
+      (!cadena)
+        ? console.warn("Ingrese una cadena de texto")
+        : console.info(cadena.split("").reverse().join("")); //el split es que todo caracter de la cadena lo da vuelta (reverse) por eso no lleva espacio ni nada, quiere decir, todo caracter.
+    }
+    invertirCadena();
+    invertirCadena("Hola Mundo");
+
+    //Contar la catidad de veces q se repite una cadena en un texto
+    const contarCadena = (cadena = "", texto = "") => {
+      if (!texto) return console.warn("No ingresaste un texto pepe");
+      if (!cadena) return console.warn("No ingresaste una cadena");
+      let i = 0, contador = 0;
+
+      while (i !== -1) { //comparo distinto de -1 ya que si indexOf no encuentra coincendencia, devuelve -1
+        i = cadena.indexOf(texto, i); //indexOf  tiene como parametero de entrada el string a buscar y la posicion de donde buscar. le meto i para que busque desde el principio. luego si lo encontro en la posicion 50, buscara en el proximo bucle a partir de la 51, ya q dentro del if, incremento i.
+        if (i !== -1) {
+          i++;
+          contador++;
+        }
+      }
+      return console.info(`La palabra ${texto} se reptite ${contador} veces`);
+    }
+    contarCadena();
+    contarCadena("hola mundo adios mundo", "mundo");
+
+    //Verificar si una palabra es un palindromo (que se lee igual en un sentido y el otro)
+    const palindromo = (cadena = "") => {
+
+      if (!cadena) return console.warn("No ingresaste una cadena");
+
+      cadena = cadena.toLowerCase();
+      let alReves = cadena.split("").reverse().join("");
+
+      return (cadena === alReves)
+        ? console.info(`Si es palindromo, Palabra Original ${cadena}. Palabra al reves ${alReves}`)
+        : console.info(`No es palindromo, palabra original ${cadena}, palabra al reves ${alReves}`);
+    }
+    palindromo();
+    palindromo("hola mundo");
+    palindromo("SaLas");
+
+    //Programa q reemplace o borre un patron de una cadena. 
+    const eliminarCaracteres = (cadena = "", patron = "") => {
+      if (!cadena) return console.warn("No ingresaste una cadena");
+      if (!patron) {
+        return console.warn("No ingresaste un patron");
+      } else {
+        console.info(cadena.replace(new RegExp(patron, "ig"), "")); //Reemplaza buscando con la expregular con ""
+      }
+    }
+
+    eliminarCaracteres();
+    eliminarCaracteres("xyz1, xyz2,xyz3,xyz4,xyz,5");
+    eliminarCaracteres("xyz1, xyz2,xyz3,xyz4,xyz,5", "xyz");
+
+    //Contar la cant de vocales de una cadena
+    const contarVocales = (cadena = "") => {
+      if (!cadena) return console.warn("No ingresaste un cadena");
+
+      if (typeof cadena !== "string") return console.error(`el valor "${cadena}" ingresao, no es una cadena de texto`);
+
+      let vocales = 0;
+
+      for (let letra of cadena) {
+        if (/[aeiouAEIOU]/.test(letra)) { //expresion regular /[aeiou..]/
+          vocales++;
+        }
+      }
+      return console.info({ cadena, vocales });
+    }
+
+    ///CAPITULO NUMERO 40
+
+
+    contarVocales("hola mundo");
+    //Validar sin un mail es valido
+    const validarMail = (mail = "") => {
+      if (!mail) return console.warn("No ingresaste un mail");
+
+      if (typeof mail !== "string") return console.error(`el valor "${mail}" ingresado, no es una cadena de texto`);
+
+      let expReg = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(mail);
+      //{2,15} valida de 2 a 15 numeros
+
+      return (expReg)
+        ? console.info(`${mail} es email valido`)
+        : console.warn(`"${mail}", NO es un mail valido`);
+    }
+    validarMail();
+    validarMail(34);
+    validarMail("jon,mir,cha@gmail");
+    validarMail("rodriguez.a.pablo@gmail.com");
+
+    //Clase 40 y 41 manejo de arreglos con numeros.
+
+    //validacion de arreglos
+    const ordenarArreglo = (arr = undefined) => {
+      if (arr === undefined) return console.warn("No ingresaste un arreglo de numeros");
+
+      if (!(arr instanceof Array)) return console.error("El valor que ingresast no es un arreglo");
+
+      if (arr.length === 0) return console.error("El arreglo esta vacio");
+
+      for (let num of arr) {
+        if (typeof num !== "number") return console.error(`El valor "${num}" ingresado, NO es un numero`);
+      }
+
+      return console.info({
+        arr,
+        asc: arr.map(el => el).sort(), //map genera otro array copiando a otro
+        desc: arr.map(el => el).sort().reverse() //lo ordena descendente
+
+      })
+
+    }
+
+    ordenarArreglo();
+    ordenarArreglo("hola")
+    ordenarArreglo([]);
+    ordenarArreglo([3, {}]);
+    ordenarArreglo([7, 5, 7, 9, 7]);
+
+
+    const quitarDuplicados = (arr = undefined) => {
+      if (arr === undefined) return console.warn("No ingresaste un arreglo de numeros");
+
+      if (!(arr instanceof Array)) return console.error("El valor que ingresast no es un arreglo");
+
+      if (arr.length === 0) return console.error("El arreglo esta vacio");
+
+      if (arr.length === 1) return console.error("El arreglo debe tener al menos 2 elementos");
+
+
+      /*return console.info({
+        original: arr,
+        sinDuplicados: arr.filter((value, index, self) => self.indexOf(value) === index);*/
+      //self toma el valor del array, por eso lo compara self contra array
+
+      //set no permite valores duplicados, es mas simple q lo anterior. Sets se utilza para quitar duplicados.
+      return console.info({
+        original: arr,
+        sinDuplicados: [...new Set(arr)]
+
+      })
+
+    }
+    quitarDuplicados();
+    quitarDuplicados({});
+    quitarDuplicados([]);
+    quitarDuplicados([1]);
+    quitarDuplicados(["x", 10, "x", "10", 10, 10, 2, true, true]);
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
