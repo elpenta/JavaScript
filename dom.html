@@ -1,10 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
+<!--Variables para CSS --dark
+      -->
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Set JavaScript</title>
+  <title>Web Apis</title>
+  <style>
+    :root {
+      --yellow-color: #F7DF1E;
+      --dark-color: #222;
+      --white-color: #FFFFFF;
+    }
+
+    .cards {
+      border: thin solid var(--dark-color);
+      padding: 1rem;
+    }
+
+    .card {
+      display: inline-block;
+      background-color: var(--dark-color);
+      color: var(--yellow-color);
+    }
+
+    .card figcaption {
+      padding: 1rem;
+    }
+
+    .rotate-45 {
+      transform: rotate(45deg);
+    }
+
+    .rotate-135 {
+      transform: rotate(135deg);
+    }
+
+    .opacity-80 {
+      opacity: .8;
+    }
+
+    .sepia {
+      filter: sepia(1);
+    }
+
+    .eventos-flujo div {
+      padding: 4rem;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .uno {
+      background-color: yellow;
+    }
+
+    .dos {
+      background-color: gold;
+    }
+
+    .tres {
+      background-color: lightyellow;
+    }
+  </style>
 </head>
 
 <body>
@@ -44,7 +102,9 @@
     </ul>
   </nav>
   <input type="text" name="nombre" placeholder="Nombre">
-  <a class="link-dom" href="dom.html" data-description="Document ObjectModel">DOM</a>
+  <a class="link-dom" href="dom.html" style="background-color:#F7DF1E;COLOR: #222;" data-id="1"
+    data-description="Document ObjectModel">DOM</a>
+  <!--LE COLOCO COLOR A DOM-->
   <!--data-(pepito) se agrega para identificar un tag dentro de html, en este caso le puse "description"-->
   <section class="cards">
     <figure class="card">
@@ -68,7 +128,52 @@
       <figcaption>Nature</figcaption>
     </figure>
   </section>
-  <script src="js/dom.js"> </script>
+  <template id="template-card">
+    <figure class="card">
+      <img>
+      <figcaption></figcaption>
+    </figure>
+  </template>
+  <h3>Eventos en JavaScript</h3>
+  <h4>Manejadores de Eventos</h4>
+  <button onclick=" holaMundo()">Evento con atributo HTML</button>
+  <br><br>
+  <button id="evento-semantico">evento con manejador semántico</button>
+  <br><br>
+  <button id="evento-multiple">evento con manejador multiple</button>
+  <br><br>
+  <button id="evento-remover">Removiendo con manejadores multiples</button>
+  <br>
+  <br><br>
+  <br>
+  <br>
+  <h4>Flujo de Eventos</h4>
+  <section class="eventos-flujo">
+    <div class="uno">
+      1
+      <div class="dos">
+        2
+        <div class="tres">
+          3
+        </div>
+      </div>
+    </div>
+  </section>
+  <h3 style="width:2000px;">Manejo del BOM, Al final</h3>
+  <button id="abrir-ventana">Abrir Ventana</button>
+  <br><br>
+  <button id="cerrar-ventana">Cerrar Ventana</button>
+  <br><br>
+  <button id="imprimir-ventana">Imprimir Ventana</button>
+  <br><br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <!--br agrega espacio en el html-->
+  <script src=" js/dom.js"> </script>
 </body>
 
 </html>
