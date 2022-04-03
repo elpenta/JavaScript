@@ -1,0 +1,44 @@
+⚛️ Curso React - https://www.youtube.com/playlist?list...
+💛 Aprende JavaScript - https://aprendejavascript.org/
+
+🔵 Curso Webpack - https://www.youtube.com/watch?v=-bp3q...
+📖 Mis notas sobre React https://jonmircha.com/react
+
+📦 Códigos: https://github.com/jonmircha/youtube-...
+
+
+
+🔔 Suscríbete al canal https://youtube.com/jonmircha?sub_con... 🤓
+👉 Visita mi sitio web  https://jonmircha.com/
+ 💻
+🌮 ¿Me invítas un taco? https://www.paypal.me/jonmircha
+
+🤲 Apóyame con una Donación https://jonmircha.com/#donaciones
+
+📫 Suscríbete a mi lista de correo https://tinyletter.com/jonmircha/
+
+
+combo de hamburguesa:
+https://jonsuh.com/hamburgers/
+
+Pagina para buscar librerias:
+https://cdnjs.com/
+
+Obs Studio utiliza para grabacion de videos
+
+
+Cambiar por Reload:
+Try changing https://www.youtube.com/watch?v=i8eBBG46H8A to https://www.youtube-nocookie.com/embed/i8eBBG46H8A
+
+svg-loader
+http://samherbert.net/svg-loaders/
+https://icons8.com/preloaders/
+
+
+Para enviar los datos del form por mail:
+https://formsubmit.co/
+
+
+AJAX
+generador de api que responden JSON para probar una app
+https://jsonplaceholder.typicode.com/
